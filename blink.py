@@ -22,7 +22,7 @@ all_color = lifx.get_color_all_lights()
 # ---------------------------------------------------------------------------- #
 
 # url for helios
-helios = "confidential"
+helios = "**confidential**"
 
 # update 1 minute before now (~ approximately status quo)
 update = datetime.datetime.now() - datetime.timedelta(minutes=120)
@@ -30,27 +30,24 @@ tics = update.strftime("%Y-%m-%dT%H:%M:%SZ")
 url = helios + "?since=" + tics
 
 # response from github
-response = requests.get(url, auth=('floramjp', "confidential"))
+response = requests.get(url, auth=('floramjp', '**confidential**'))
 response_dict = response.json()
-response_dict = json.dumps(response_dict)
-print response_dict
 recent_push = response_dict[0]["commit"]["committer"]["date"]
 print "Most recent push " + recent_push
 
 while True :
 	
-	# delay for 3 minutes
-	time.sleep(180)
+	# delay for 5 minutes
+	time.sleep(300)
 
-	# update 3 minute before now
-	update = datetime.datetime.now() - datetime.timedelta(minutes=3)
+	# update 5 minute before now
+	update = datetime.datetime.now() - datetime.timedelta(minutes=5)
 	tics = update.strftime("%Y-%m-%dT%H:%M:%SZ")
 	print "3 minutes passed, now time is: " + tics
 
 	# response from github
-	response = requests.get(url, auth=('floramjp', "confidential"))
+	response = requests.get(url, auth=('floramjp', **confidential**''))
 	response_dict = response.json()
-	response_dict = json.dumps(response_dict)
 	temp = response_dict[0]["commit"]["committer"]["date"]
 
 	if (temp != recent_push) :
