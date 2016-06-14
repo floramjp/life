@@ -1,7 +1,6 @@
 from lifxlan import *
 import time
 import sys
-
 import requests
 import datetime
 import json
