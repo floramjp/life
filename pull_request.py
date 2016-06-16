@@ -19,8 +19,8 @@ all_color = lifx.get_color_all_lights()
 
 # ---------------------------------------------------------------------------- #
 # helios
-helios = '**confidential**'
-response = requests.get(helios, auth=('floramjp', '**confidential**'))
+helios = "https://api.github.com/repos/WarbyParker/helios/pulls?sort=updated&direction=dsc"
+response = requests.get(helios, auth=('floramjp', 'd1f69bc35998d2066908f443f91192e67fb91dcd'))
 response_json = response.json()
 response_dict = json.dumps(response_json)
 load_dict = json.loads(response_dict)
@@ -51,7 +51,7 @@ while True :
 	
 	# sleep for 5 minutes
 	sleep(300)
-	response = requests.get(helios, auth=('floramjp', '**confidential**'))
+	response = requests.get(helios, auth=('floramjp', 'd1f69bc35998d2066908f443f91192e67fb91dcd'))
 	response_json = response.json()
 	response_dict = json.dumps(response_json)
 	load_dict = json.loads(response_dict)

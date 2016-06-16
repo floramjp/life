@@ -21,7 +21,7 @@ all_color = lifx.get_color_all_lights()
 # ---------------------------------------------------------------------------- #
 
 # url for helios
-helios = "**confidential**"
+helios = "https://api.github.com/repos/WarbyParker/helios/commits"
 
 # initial update
 update = datetime.datetime.now() - datetime.timedelta(minutes=120)
@@ -29,12 +29,12 @@ tics = update.strftime("%Y-%m-%dT%H:%M:%SZ")
 url = helios + "?since=" + tics
 
 # response from github
-response = requests.get(url, auth=('floramjp', '**confidential**'))
+response = requests.get(url, auth=('floramjp', 'd1f69bc35998d2066908f443f91192e67fb91dcd'))
 response_dict = response.json()
 recent_push = response_dict[0]["commit"]["committer"]["date"]
 print "Initialization! Most recent push is: " + recent_push
 
-while True :
+while True:
 	
 	# delay for 5 minutes
 	time.sleep(300)
@@ -45,7 +45,7 @@ while True :
 	print "5 minutes passed, now time is: " + tics
 
 	# response from github
-	response = requests.get(url, auth=('floramjp', '**confidential**'))
+	response = requests.get(url, auth=('floramjp', 'd1f69bc35998d2066908f443f91192e67fb91dcd'))
 	response_dict = response.json()
 	temp = response_dict[0]["commit"]["committer"]["date"]
 

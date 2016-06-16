@@ -1,7 +1,7 @@
 # lifx
 
 This is Flora Park's project using lifx.
-Given repo and authentication is substituted as "confidential" in this public source code. Github API is used for development and mclarkk/lifxlan is used for rainbow blinks.
+Github API is used for development and mclarkk/lifxlan is used for rainbow blinks.
 The repo contains the source code for manipulating the wifi-lightbulb (lifx) accordingly to different actions on the repo.
 
 *******************************************************************
