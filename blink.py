@@ -29,7 +29,7 @@ tics = update.strftime("%Y-%m-%dT%H:%M:%SZ")
 url = helios + "?since=" + tics
 
 # response from github
-response = requests.get(url, auth=('floramjp', 'd1f69bc35998d2066908f443f91192e67fb91dcd'))
+response = requests.get(url, auth=('floramjp', '*'))
 response_dict = response.json()
 recent_push = response_dict[0]["commit"]["committer"]["date"]
 print "Initialization! Most recent push is: " + recent_push
@@ -45,7 +45,7 @@ while True:
 	print "5 minutes passed, now time is: " + tics
 
 	# response from github
-	response = requests.get(url, auth=('floramjp', 'd1f69bc35998d2066908f443f91192e67fb91dcd'))
+	response = requests.get(url, auth=('floramjp', '*'))
 	response_dict = response.json()
 	temp = response_dict[0]["commit"]["committer"]["date"]
 
